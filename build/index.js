@@ -9,13 +9,13 @@ const bucket = storage.bucket('pastes.pokecenter.xyz');
  * @param {!express:Response} res HTTP response context.
  */
 exports.helloWorld = (req, res) => {
-    let file = bucket.file('testfile.html');
-    file.save('test 123 ' + message,
-        ((error) => {
-            error ? reject(error) : resolve()
-        })
-    );
-
   let message = req.query.message || req.body.message || 'Hello World!';
+  let file = bucket.file('testfile.html');
+  file.save('test 123 ' + message,
+    ((error) => {
+      error ? reject(error) : resolve()
+    })
+  );
+
   res.status(200).send(message);
 };
