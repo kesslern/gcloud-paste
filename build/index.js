@@ -10,7 +10,7 @@ const bucket = storage.bucket('pastes.pokecenter.xyz');
  */
 exports.helloWorld = (req, res) => {
     let file = bucket.file('testfile.html');
-    file.save('test 123 aoeu',
+    file.save('test 123 ' + message,
         ((error) => {
             error ? reject(error) : resolve()
         })
